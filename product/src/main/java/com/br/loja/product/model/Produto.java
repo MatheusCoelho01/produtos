@@ -1,18 +1,23 @@
 package com.br.loja.product.model;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "produto")
 public class Produto {
 
+    @Id
+    @Column(name = "id")
     private String id;
-    private String nome;
-    private String descricao;
-    private String preco;
 
-    public Produto(String id, String nome, String descricao, String preco) {
-        this.id = id;
-        this.nome = nome;
-        this.descricao = descricao;
-        this.preco = preco;
-    }
+    @Column(name = "nome")
+    private String nome;
+
+    @Column(name = "descricao")
+    private String descricao;
+
+    @Column(name = "preco")
+    private String preco;
 
     public String getId() {
         return id;
